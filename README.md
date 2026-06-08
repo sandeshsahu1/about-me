@@ -1,23 +1,27 @@
 # Sandesh Sahu - Personal Portfolio
 
-A personal portfolio website showcasing my technical skills, experience, and projects in Linux administration, networking, cloud computing, and web hosting. 
+[![Live Website](https://img.shields.io/badge/Live_Website-sandesh--op.com-blue?style=for-the-badge&logo=google-chrome)](http://sandesh-op.com)
 
-This repository contains the static source code (HTML, CSS, JS) for my portfolio, which is deployed automatically via a modern CI/CD pipeline.
+A personal portfolio website showcasing my technical skills, experience, and projects in Linux administration, networking, cloud computing, and web infrastructure. 
 
-## 🚀 Tech Stack & Deployment
+This repository contains the static source code (HTML, CSS, JS) for my portfolio, which is deployed automatically to a custom-configured bare-metal server via a modern CI/CD pipeline.
+
+## 🚀 Tech Stack & Infrastructure
 
 * **Frontend:** HTML5, CSS3, JavaScript, Bootstrap 5
-* **Hosting:** Oracle Cloud VPS
-* **Web Server:** Nginx (via Docker Container)
-* **CI/CD:** GitHub Actions (Automated build and deploy)
-* **Security & DNS:** Cloudflare (SSL/TLS, CDN, Firewall)
+* **Hosting:** Oracle Cloud VPS (Ubuntu)
+* **Web Server:** Bare-metal Nginx (Custom configured for clean URLs and error routing)
+* **CI/CD:** GitHub Actions (Automated zero-downtime deployment via SFTP)
+* **Security & DNS:** Cloudflare (SSL/TLS, CDN), UFW, and SSH key-only authentication
 
-## 🛠️ Customizations
+## 🛠️ Infrastructure & Customizations
 
-This project was built upon a base template but customized to fit a static hosting environment:
-* **Custom Contact Modal:** Replaced the default PHP/AJAX contact form (which requires a backend server) with a lightweight, responsive modal linking directly to email and professional social profiles.
-* **Analytics integration:** Integrated Google Analytics (GA4) for traffic monitoring.
-* **Content Overhaul:** Tailored the timeline and skills section to reflect independent IT support and infrastructure experience.
+This project was designed to demonstrate practical systems administration and deployment skills:
+* **Automated CI/CD:** Push-to-deploy workflow using GitHub Actions securely syncing updates to the VPS.
+* **Clean URL Routing:** Nginx server blocks manually configured to serve extensionless `.html` files for a professional URL structure.
+* **Custom Error Handling:** Internal routing configured for a custom 404 error page.
+* **Server Hardening:** Locked down Oracle VPS with disabled password authentication and strict UFW firewall rules.
+* **Static Conversions:** Replaced the default PHP contact form (which requires a backend server) with a lightweight, responsive modal linking directly to email and professional social profiles.
 
 ## 📜 Credits & Attribution
 
@@ -30,4 +34,4 @@ This website's frontend UI is based on the **FolioOne** template provided by [Bo
 As per the free tier usage guidelines, the original design credit link remains intact in the footer of the HTML files. 
 
 ---
-*Modified and maintained by [Sandesh Sahu](https://github.com/sandeshsahu1).*
+*Exploring professional workflows and maintained by [Sandesh Sahu](https://github.com/sandeshsahu1).*
