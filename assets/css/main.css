@@ -562,40 +562,6 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Scroll Top Button
---------------------------------------------------------------*/
-.scroll-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: -15px;
-  z-index: 99999;
-  background-color: var(--accent-color);
-  width: 44px;
-  height: 44px;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-
-.scroll-top i {
-  font-size: 24px;
-  color: var(--contrast-color);
-  line-height: 0;
-}
-
-.scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
-}
-
-.scroll-top.active {
-  visibility: visible;
-  opacity: 1;
-  bottom: 15px;
-}
-
-/*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
@@ -1538,166 +1504,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
-.services .service-item {
-  display: flex;
-  background-color: var(--surface-color);
-  border-radius: 12px;
-  padding: 2rem;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-  transition: all 0.4s ease;
-}
-
-.services .service-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background-color: var(--accent-color);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.services .service-item:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transform: translateY(-5px);
-}
-
-.services .service-item:hover::before {
-  transform: scaleY(1);
-}
-
-.services .service-item:hover .service-icon {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: rotateY(180deg);
-}
-
-.services .service-item:hover .service-icon i {
-  transform: rotateY(180deg);
-}
-
-.services .service-item:hover .service-link i {
-  transform: translateX(5px);
-}
-
-.services .service-icon {
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  border-radius: 12px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1.5rem;
-  transition: all 0.5s ease;
-}
-
-.services .service-icon i {
-  font-size: 2rem;
-  transition: transform 0.5s ease;
-}
-
-.services .service-content {
-  flex-grow: 1;
-}
-
-.services .service-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  color: var(--heading-color);
-}
-
-.services .service-content p {
-  margin-bottom: 1.25rem;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.services .service-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--accent-color);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.services .service-link span {
-  margin-right: 0.5rem;
-}
-
-.services .service-link i {
-  transition: transform 0.3s ease;
-}
-
-.services .service-link:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
-
-@media (max-width: 767.98px) {
-  .services .service-item {
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .services .service-icon {
-    width: 60px;
-    height: 60px;
-    margin-right: 1rem;
-  }
-
-  .services .service-icon i {
-    font-size: 1.5rem;
-  }
-
-  .services .service-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .services .service-content p {
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .services .service-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .services .service-item::before {
-    width: 100%;
-    height: 4px;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-
-  .services .service-item:hover::before {
-    transform: scaleX(1);
-  }
-
-  .services .service-icon {
-    margin-right: 0;
-    margin-bottom: 1.25rem;
-  }
-
-  .services .service-link {
-    justify-content: center;
-  }
-}
 
 /*--------------------------------------------------------------
 # Service Details Section
@@ -3135,4 +2941,279 @@ section,
   .error-actions .btn {
     width: 100%;
   }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px; /* Default hidden state for normal pages */
+  z-index: 99999;
+  background-color: rgba(255, 255, 255, 0.05); 
+  color: rgba(255, 255, 255, 0.7);
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important; 
+  box-sizing: border-box;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top i {
+  font-size: 20px;
+  line-height: 1;
+  margin: 0;
+}
+
+.scroll-top:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Active state for normal pages (Resume, About, etc.) */
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px !important; 
+}
+
+/* ---------------------------------------------------
+   Overrides SPECIFICALLY for the Tools Page 
+--------------------------------------------------- */
+.tools-page .scroll-top {
+  bottom: 110px; /* Adjusts hidden slide state for Tools page */
+}
+
+.tools-page .scroll-top.active {
+  bottom: 125px !important; /* Stacks above shortcuts on Tools page ONLY */
+}
+/*--------------------------------------------------------------
+# Floating Navigation Buttons (Tools Page)
+--------------------------------------------------------------*/
+.section-shortcuts {
+  position: fixed;
+  right: 15px;
+  bottom: 15px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  z-index: 996;
+}
+
+.section-shortcuts a {
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-shortcuts a i {
+  font-size: 18px; 
+  line-height: 1;
+  margin: 0;
+}
+
+.section-shortcuts a:hover {
+  background-color: var(--accent-color); 
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/*--------------------------------------------------------------
+# Tools Section (Masonry Grid Fix)
+--------------------------------------------------------------*/
+/* Creates the vertical columns */
+
+.tools-section .tool-card {
+  display: flex;
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  height: auto; /* Lets the card grow naturally */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
+}
+
+.tools-section .tool-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: var(--accent-color);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.tools-section .tool-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.tools-section .tool-card:hover::before {
+  transform: scaleY(1);
+}
+
+.tools-section .tool-card:hover .tool-icon {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: rotateY(180deg);
+}
+
+.tools-section .tool-card:hover .tool-icon i {
+  transform: rotateY(180deg);
+}
+
+.tools-section .tool-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+.tools-section .tool-icon i {
+  font-size: 2rem;
+  transition: transform 0.5s ease;
+}
+
+.tools-section .tool-content {
+  flex-grow: 1;
+}
+
+.tools-section .tool-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.tools-section .tool-content p {
+  margin-bottom: 1.25rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+/*--------------------------------------------------------------
+# Tool Cards Hover Animation 
+--------------------------------------------------------------*/
+.tool-card .bi-chevron-expand {
+  transition: transform 0.3s ease;
+}
+.tool-card:hover .bi-chevron-expand,
+.tool-card[aria-expanded="true"] .bi-chevron-expand {
+  transform: rotate(180deg);
+  color: var(--accent-color) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tool-card:hover .collapse {
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
+    animation: smoothReveal 0.4s ease forwards;
+  }
+}
+
+@keyframes smoothReveal {
+  0% { opacity: 0; margin-top: 0; }
+  100% { opacity: 1; margin-top: 10px; }
+}
+
+/* ---------------------------------------------------------- */
+/* Day to Day Custom List Styling */
+/* 1. Left-align the header to anchor the grid */
+/* ------------------------------------------------------------ */
+.tools-section .tool-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Changed from center */
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.tools-section .tool-list-header i {
+  margin-right: 12px;
+  color: var(--accent-color);
+}
+
+/* 2. Adjust Grid Spacing */
+.tools-section .misc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Slightly tighter columns */
+  gap: 12px 30px; /* Added row gaps to space the items vertically */
+}
+
+/* 3. The "Clean Box" Style */
+.tools-section .misc-list li {
+  padding: 10px 15px;
+  border-bottom: none;  
+  background-color: rgba(255, 255, 255, 0.02); /* Very subtle background box */
+  border-radius: 8px; /* Soft edges */
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.tools-section .misc-list li:hover {
+  background-color: rgba(255, 255, 255, 0.06); /* Brightens slightly on hover */
+  transform: translateX(4px); /* Tiny slide effect */
+}
+
+.tools-section .misc-list li i {
+  color: var(--accent-color);
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/*--------------------------------------------------------------
+#  Link Offset Fix (AOS Compatible)
+--------------------------------------------------------------*/
+.anchor-target {
+  display: block;
+  visibility: hidden;
+  position: relative;
+  scroll-margin-top: 120px; /* Accounts for the sticky header */
 }
