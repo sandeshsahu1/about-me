@@ -732,10 +732,22 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
-.hero .hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 3rem;
+/* Center buttons on iPads and smaller screens */
+@media (max-width: 991px) {
+  .hero .hero-actions {
+    justify-content: center;
+  }
+}
+
+/* existing mobile code stays exactly the same */
+@media (max-width: 576px) {
+  .hero .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero .hero-actions .btn {
+    text-align: center;
+  }
 }
 
 .hero .hero-actions .btn {
@@ -2753,42 +2765,71 @@ section,
 .language-card li:last-child {
   margin-bottom: 0;
 }
-.modal-content {
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(20, 31, 39, 0.98), rgba(10, 18, 24, 0.98));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(14px);
+/*--------------------------------------------------------------
+# Modern, Blurry Contact Modal
+--------------------------------------------------------------*/
+/* The Glass Container */
+#contactModal .modal-content {
+  background: rgba(17, 27, 34, 0.80) !important; /* Slightly transparent dark background */
+  backdrop-filter: blur(16px); /* The magic blur effect */
+  -webkit-backdrop-filter: blur(16px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px; /* Matches your mobile nav radius */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-.modal-header,
-.modal-footer {
-  border-color: rgba(255, 255, 255, 0.08) !important;
+/* Softer Divider Line */
+#contactModal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.modal-title {
+#contactModal .modal-title {
   font-weight: 600;
   letter-spacing: 0.2px;
+  color: #ffffff;
 }
 
-.btn-outline-light {
-  border-color: rgba(255, 255, 255, 0.18);
+#contactModal .modal-body p {
+  color: rgba(255, 255, 255, 0.7); /* Slightly muted text for better contrast */
 }
 
-.btn-outline-light:hover {
-  background: rgba(19, 135, 193, 0.12);
-  border-color: #1387c1;
-  color: #fff;
+/* Modern Primary Button */
+#contactModal .btn-primary {
+  background: rgba(19, 135, 193, 0.9);
+  border-color: rgba(19, 135, 193, 0.9);
+  border-radius: 12px; /* Modern, slightly rounded corners */
+  transition: all 0.3s ease;
 }
 
-.btn-primary {
+#contactModal .btn-primary:hover {
   background: #1387c1;
   border-color: #1387c1;
+  transform: translateY(-2px); /* Subtle lift on hover */
+  box-shadow: 0 6px 15px rgba(19, 135, 193, 0.25); /* Subtle blue glow */
 }
 
-.btn-primary:hover {
-  background: #0f6f9f;
-  border-color: #0f6f9f;
+/* Modern Outline/Copy Buttons */
+#contactModal .btn-outline-light {
+  background: rgba(255, 255, 255, 0.03); /* Faint white fill */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+}
+
+#contactModal .btn-outline-light:hover {
+  background: rgba(19, 135, 193, 0.12);
+  border-color: rgba(19, 135, 193, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px); /* Subtle lift to match primary */
+}
+
+/* Ensure the success/copied state overrides the outline style */
+#contactModal .btn-success {
+  background: rgba(25, 135, 84, 0.2) !important;
+  border-color: rgba(25, 135, 84, 0.5) !important;
+  color: #20c997 !important;
+  border-radius: 12px;
 }
 @media (max-width: 1199px) {
   .navmenu ul {
@@ -3216,4 +3257,143 @@ section,
   visibility: hidden;
   position: relative;
   scroll-margin-top: 120px; /* Accounts for the sticky header */
+}
+/*--------------------------------------------------------------
+# Exact Mobile Match (Bottom Navigation)
+--------------------------------------------------------------*/
+.bottom-menu-box {
+  max-width: 350px;
+  margin: 1.5rem auto 2rem auto; /* Reduced top gap, kept bottom gap */
+  background: rgba(17, 27, 34, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 16px 14px;
+}
+
+.bottom-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Exact padding, radius, and margins from your mobile nav */
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  border-radius: 14px;
+  color: var(--nav-dropdown-color);
+  font-family: var(--nav-font, sans-serif);
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Remove bottom margin from the last item so the box is perfectly symmetrical */
+.bottom-menu-box > .bottom-menu-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Exact hover and active states from your mobile nav */
+.bottom-menu-item:hover,
+.bottom-menu-item:focus,
+.bottom-menu-item.active {
+  background: rgba(19, 135, 193, 0.12);
+  color: var(--nav-dropdown-hover-color);
+}
+
+/* Smooth arrow rotation for the dropdown */
+.bottom-menu-item .bi-chevron-down {
+  transition: transform 0.3s ease;
+}
+.bottom-menu-item[aria-expanded="true"] .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Exact inner-dropdown styling */
+.bottom-menu-box .collapse {
+  background-color: rgba(33, 37, 41, 0.1);
+  border-radius: 14px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.bottom-menu-box .collapse .bottom-menu-item {
+  margin-bottom: 0;
+  padding-left: 20px; /* Slight indent to show it's a sub-menu */
+  border-radius: 0; /* Let the container handle the radius */
+  font-size: 16px;
+}
+
+/*--------------------------------------------------------------
+# Modern Glass 404 Page
+--------------------------------------------------------------*/
+.error-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Centers the card vertically on the screen */
+  padding: 2rem 1rem;
+}
+
+.error-card {
+  background: rgba(17, 27, 34, 0.70);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Subtle glowing orb behind the text */
+.error-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  background: rgba(19, 135, 193, 0.25);
+  filter: blur(70px);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.error-icon i {
+  display: inline-block;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* Smooth floating animation */
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  /* Cool modern gradient text */
+  background: -webkit-linear-gradient(45deg, #ffffff, #1387c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-card .btn {
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-weight: 500;
 }

@@ -202,3 +202,28 @@
   });
 
 })();
+
+// Implemented and customised with vibe coding
+
+// Copy Email to Clipboard Function 
+function copyEmailToClipboard() {
+  const email = "contact@sandesh-op.com";
+  navigator.clipboard.writeText(email).then(() => {
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const originalHTML = copyBtn.innerHTML;
+    
+    // Swap to checkmark icon only (keeps the layout perfectly intact)
+    copyBtn.innerHTML = '<i class="bi bi-check-lg fs-5"></i>';
+    copyBtn.classList.add('btn-success');
+    copyBtn.classList.remove('btn-outline-light');
+    
+    // Reset button after 2 seconds
+    setTimeout(() => {
+      copyBtn.innerHTML = originalHTML;
+      copyBtn.classList.remove('btn-success');
+      copyBtn.classList.add('btn-outline-light');
+    }, 2000);
+  });
+}
+
+// Implemented and customised with vibe coding

@@ -64,8 +64,6 @@
       <div class="header-social-links">
         <a href="https://www.linkedin.com/in/sandesh-sahu"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/sandeshsahu1"><i class="bi bi-github"></i></a>
-        <a href="https://x.com/sandeshsahuu"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/sandeshsahuu"><i class="bi bi-facebook"></i></a>
       </div>
 
     </div>
@@ -206,8 +204,32 @@
               </div>
             </div>
 
+            <div class="tool-card" data-bs-toggle="collapse" data-bs-target="#descOffice" aria-expanded="false">
+              <div class="tool-icon"><i class="bi bi-file-earmark-spreadsheet"></i></div>
+              <div class="tool-content">
+                <h3 class="d-flex justify-content-between align-items-center">
+                  MS Excel & Word <i class="bi bi-chevron-expand text-muted"></i>
+                </h3>
+                <div class="collapse" id="descOffice">
+                  <p class="mt-2 mb-0">Worked with spreadsheets and document management for various tasks. Familiar with Pivot Tables, formulas, lookups, data cleaning, formatting, chart creation, basic macros, and workflow automation techniques.</p>
+                </div>
+              </div>
+            </div>
+
           </div><div class="col-lg-4 col-md-12 d-flex flex-column gap-4">
-            
+
+            <div class="tool-card" data-bs-toggle="collapse" data-bs-target="#descLinux" aria-expanded="false">
+              <div class="tool-icon"><i class="bi bi-ubuntu"></i></div>
+              <div class="tool-content">
+                <h3 class="d-flex justify-content-between align-items-center">
+                  Linux administration <i class="bi bi-chevron-expand text-muted"></i>
+                </h3>
+                <div class="collapse" id="descLinux">
+                  <p class="mt-2 mb-0"> Managing Linux systems, services, users, permissions, logs, packages, networking and  security. Familiar with SSH, systemd, troubleshooting, and routine server maintenance.</p>
+                </div>
+              </div>
+            </div>
+
             <div class="tool-card" data-bs-toggle="collapse" data-bs-target="#descShell" aria-expanded="false">
               <div class="tool-icon"><i class="bi bi-terminal"></i></div>
               <div class="tool-content">
@@ -256,18 +278,6 @@
               </div>
             </div>
 
-            <div class="tool-card" data-bs-toggle="collapse" data-bs-target="#descOffice" aria-expanded="false">
-              <div class="tool-icon"><i class="bi bi-file-earmark-spreadsheet"></i></div>
-              <div class="tool-content">
-                <h3 class="d-flex justify-content-between align-items-center">
-                  MS Excel & Word <i class="bi bi-chevron-expand text-muted"></i>
-                </h3>
-                <div class="collapse" id="descOffice">
-                  <p class="mt-2 mb-0">Worked with spreadsheets and document management for various tasks. Familiar with Pivot Tables, formulas, lookups, data cleaning, formatting, chart creation, basic macros, and workflow automation techniques.</p>
-                </div>
-              </div>
-            </div>
-
           </div></div>
       </div>
 
@@ -301,7 +311,7 @@
                 <li><i class="bi bi-terminal"></i> zip / unzip / p7zip</li>
                 <li><i class="bi bi-terminal"></i> ffmpeg / yt-dlp</li>
                 <li><i class="bi bi-terminal"></i> firewall / firewalld </li>
-                <li><i class="bi bi-terminal"></i> mixx software </li>
+                <li><i class="bi bi-terminal"></i> users / permissions </li>
                 <li><i class="bi bi-terminal"></i> pipewire / pulse audio</li>
                 <li><i class="bi bi-terminal"></i> easyeffect / qpwgraph</li>
                 <li><i class="bi bi-terminal"></i> gnome extensions </li>
@@ -358,6 +368,34 @@
       </div>
     </section>
 
+    <div class="container" data-aos="fade-up" data-aos-delay="200">
+      <div class="bottom-menu-box">
+        
+        <a class="bottom-menu-item" data-bs-toggle="collapse" href="#backMenu" role="button" aria-expanded="false">
+          <span><i class="bi bi-arrow-left me-2"></i> Back To</span>
+          <i class="bi bi-chevron-down" style="font-size: 14px;"></i>
+        </a>
+
+        <div class="collapse" id="backMenu">
+          <a href="/resume" class="bottom-menu-item">
+            <span><i class="bi bi-file-earmark-text me-2"></i> Resume Page</span>
+          </a>
+          <a href="/about" class="bottom-menu-item">
+            <span><i class="bi bi-person me-2"></i> About Page</span>
+          </a>
+          <a href="/" class="bottom-menu-item">
+            <span><i class="bi bi-house me-2"></i> Home Page</span>
+          </a>
+        </div>
+        
+        <a href="#" class="bottom-menu-item active" data-bs-toggle="modal" data-bs-target="#contactModal">
+          <span>Get In Touch</span>
+          <i class="bi bi-envelope"></i>
+        </a>
+
+      </div>
+    </div>
+
   </main>
 
   <div class="section-shortcuts">
@@ -365,31 +403,43 @@
     <a href="#misc-tools" title="Jump to Misc Tools"><i class="bi bi-tools"></i></a>
   </div>
 
-  <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-dark text-light border-secondary">
-        <div class="modal-header border-secondary">
-          <h5 class="modal-title">Get In Touch</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p class="mb-4">If you would like to discuss job opportunities or simply connect, feel free to reach out through the options below.</p>
-          <div class="d-grid gap-2">
-            <a href="mailto:sandeshrusalli@gmail.com" class="btn btn-primary">
-              <i class="bi bi-envelope me-2"></i>Email Me
+<!-- contact model -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light border-secondary">
+      
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title">Get In Touch</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body">
+          <p class="mb-4">
+                 If you would like to discuss about job opportunities or simply connect, feel free to reach out through the contact information below
+          </p>
+        
+        <div class="d-grid gap-2">
+          
+          <div class="d-flex gap-2">
+            <a href="mailto:contact@sandesh-op.com" class="btn btn-primary d-flex align-items-center justify-content-center" style="width: 80%;">
+                <i class="bi bi-envelope me-2"></i>Email Me
             </a>
-            <a href="https://www.linkedin.com/in/sandesh-sahu" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">
-              <i class="bi bi-linkedin me-2"></i>LinkedIn
-            </a>
-            <a href="https://github.com/sandeshsahu1" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">
-              <i class="bi bi-github me-2"></i>GitHub
-            </a>
+                <button onclick="copyEmailToClipboard()" class="btn btn-outline-light d-flex align-items-center justify-content-center" id="copyEmailBtn" style="width: 20%;" aria-label="Copy Email">
+                  <i class="bi bi-copy fs-5"></i>
+                </button>
           </div>
+            <a href="https://www.linkedin.com/in/sandesh-sahu" target="_blank" class="btn btn-outline-light">
+                  <i class="bi bi-linkedin me-2"></i>LinkedIn
+            </a>
+            <a href="https://github.com/sandeshsahu1" target="_blank" class="btn btn-outline-light">
+                  <i class="bi bi-github me-2"></i>GitHub
+            </a>
         </div>
       </div>
     </div>
   </div>
-
+</div>
+<!-- contact model-->
 
   <footer id="footer" class="footer">
 

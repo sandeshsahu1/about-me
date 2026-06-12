@@ -40,42 +40,44 @@
 </head>
 
 <body class="index-page">
-<!-- Implemented and customised with vibe coding -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- contact model -->
 <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-light border-secondary">
-
+      
       <div class="modal-header border-secondary">
         <h5 class="modal-title">Get In Touch</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-
-        <div class="modal-body">
+      
+      <div class="modal-body">
           <p class="mb-4">
-            If you would like to discuss about job opportunities or simply connect, feel free to reach out through the contact information below
+                 If you would like to discuss about job opportunities or simply connect, feel free to reach out through the contact information below
           </p>
         
-          <div class="d-grid gap-2">
-            <a href="mailto:sandeshrusalli@gmail.com" class="btn btn-primary">
-              <i class="bi bi-envelope me-2"></i>Email Me
+        <div class="d-grid gap-2">
+          
+          <div class="d-flex gap-2">
+            <a href="mailto:contact@sandesh-op.com" class="btn btn-primary d-flex align-items-center justify-content-center" style="width: 80%;">
+                <i class="bi bi-envelope me-2"></i>Email Me
             </a>
-            <a href="https://www.facebook.com/sandeshsahuu" target="_blank" class="btn btn-outline-light">
-              <i class="bi bi-facebook me-2"></i>Facebook
-            </a>
+                <button onclick="copyEmailToClipboard()" class="btn btn-outline-light d-flex align-items-center justify-content-center" id="copyEmailBtn" style="width: 20%;" aria-label="Copy Email">
+                  <i class="bi bi-copy fs-5"></i>
+                </button>
+          </div>
             <a href="https://www.linkedin.com/in/sandesh-sahu" target="_blank" class="btn btn-outline-light">
-              <i class="bi bi-linkedin me-2"></i>LinkedIn
+                  <i class="bi bi-linkedin me-2"></i>LinkedIn
             </a>
             <a href="https://github.com/sandeshsahu1" target="_blank" class="btn btn-outline-light">
-              <i class="bi bi-github me-2"></i>GitHub
+                  <i class="bi bi-github me-2"></i>GitHub
             </a>
-          </div>
         </div>
-
+      </div>
     </div>
   </div>
 </div>
-<!-- Implemented and customised with vibe coding -->
+<!-- contact model-->
 
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
@@ -111,8 +113,8 @@
             </ul>
           </li> -->
           <li>
-             <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal"> Contact</a>
-        </li>
+             <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -120,8 +122,6 @@
       <div class="header-social-links">
         <a href="https://www.linkedin.com/in/sandesh-sahu"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/sandeshsahu1"><i class="bi bi-github"></i></a>
-        <a href="https://x.com/sandeshsahuu"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/sandeshsahuu"><i class="bi bi-facebook"></i></a>
       </div>
 
     </div>
@@ -143,7 +143,7 @@
               <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
                 <a href="https://github.com/sandeshsahu1" class="btn btn-primary">View Github</a>
                 <a href="resume.html#skill" class="btn btn-outline">View Skill</a>
-              </div>
+             </div>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2">
@@ -172,6 +172,17 @@
       </div>
 
     </section><!-- /Hero Section -->
+    
+    <div class="container" data-aos="fade-up" data-aos-delay="200">
+      <div class="bottom-menu-box">
+        
+        <a href="/about" class="bottom-menu-item active">
+          <span>To About</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+    </div>
 
   </main>
 
